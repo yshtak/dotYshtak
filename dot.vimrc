@@ -86,7 +86,17 @@ endfunction
 "------------------------------------
 " 補完・履歴 neocomplcache "{{{
 set infercase
- 
+
+" ------------------------
+" neocomplcacheの色設定
+" ------------------------
+highlight Pmenu ctermbg=245
+highlight Pmenu ctermfg=255
+highlight PmenuSel ctermbg=204
+highlight PmenuSel ctermfg=234
+highlight PMenuSbar ctermbg=245
+highlight PMenuSbar ctermfg=255
+
 "----------------------------------------
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
