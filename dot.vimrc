@@ -10,7 +10,7 @@ set smarttab
 set tabstop=1
 set smartindent
 " タブを挿入するときの幅
-set shiftwidth=1
+set shiftwidth=2
 set expandtab " replace to use a tab as space
 set laststatus=2 " StatuLineの表示
 "set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -41,12 +41,21 @@ if has('vim_starting')
 endif
 " originalrepos on git hub
 "NeoBundle 'Lokaltog/vim-powerline'
+" javascript jade
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'briancollins/vim-jst'
+NeoBundle 'pangloss/vim-javascript'
+"
 NeoBundle 'YankRing.vim'
+" for elixir
+NeoBundle 'elixir-lang/vim-elixir'
 " for Haskel
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'eagletmt/unite-haddock'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'pbrisbin/html-template-syntax'
+"" for Rails
+NeoBundle 'tpope/vim-rails'
 ""
 NeoBundle 'lambdalisue/platex.vim'
 NeoBundle 'taichouchou2/alpaca_powertabline'
