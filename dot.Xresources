@@ -1,0 +1,70 @@
+! ターミナルの名前 
+urxvt*termName: rxvt 
+
+! フォントの設定 
+! Ritcy Discord,サイズ12,アンチエイリアスON 
+!urxvt.font: xft:Inconsolata for Powerline:style=dz:pixelsize=14:hinting=slight, xft:IPAゴシック:Regular:size=10:hinting=true
+urxvt.font: xft:Ricty:style=RegularForPowerline:size=10:antialias=true 
+urxvt.boldFont: xft:Ricty:style=BoldForPowerline:size=10:antialias=true 
+URxvt.italicFont: xft:Ricty:style=BoldForPowerline:size=10:antialias=true 
+URxvt.boldItalicFont: xft:Ricty:style=BoldForPowerline:size=10:antialias=true 
+
+! スクロールバーなし 
+urxvt.scrollBar: false 
+
+! 履歴に残す数 
+urxvt.saveLines: 20000 
+
+urxvt*depth: 32
+! 前景色
+urxvt*foreground: rgba:ffff/ffff/ffff/ffff
+
+! 前景色 
+urxvt*background: rgba:0000/0000/0000/cccc
+
+! その他の色の設定 
+URxvt.color0: #000000 
+URxvt.color1: #CC0000 
+URxvt.color2: #4E9A06 
+URxvt.color3: #C4A000 
+URxvt.color4: #3465A4 
+URxvt.color5: #AE80B6 
+URxvt.color6: #06989A
+URxvt.color7: #D3D7CF 
+URxvt.color8: #555753 
+URxvt.color9: #EF2929
+URxvt.color10: #8AE234 
+URxvt.color11: #FCE94F 
+URxvt.color12: #729FCF 
+URxvt.color13: #D9ABD4 
+URxvt.color14: #34E2E2 
+URxvt.color15: #EEEEEC 
+
+! input with IM at cursor position 
+urxvt.preeditType: OverTheSpot 
+
+! カスタマイズ用のファイルの場所をフルパスで指定 
+URxvt.perl-lib:/home/yshtak/.urxvt/urxvt-perls/ 
+
+! 各ファイルをカンマ区切りで読み込む 
+URxvt.perl-ext-common: keyboard-select,url-select,clipboard 
+
+! キーボードセレクトモードを使う 
+URxvt.keysym.M-Escape: perl:keyboard-select:activate 
+
+! サーチモードを M-s に割り当てる 
+URxvt.keysym.M-s: perl:keyboard-select:search 
+
+! url セレクトモードを使う 
+URxvt.keysym.M-u: perl:url-select:select_next 
+! マウスの左クリックで url を開く (デフォルトは 2) 
+URxvt.url-select.button:1 
+! url は firefox の新しいタブで開く 
+URxvt.url-select.launcher:firefox -new-tab 
+! url にはアンダーラインをつける 
+URxvt.url-select.underline:true 
+
+! クリップボードにキーバインドを割り当てる 
+URxvt.keysym.C-w: perl:clipboard:copy 
+URxvt.keysym.C-y: perl:clipboard:paste 
+URxvt.keysym.M-C-y: perl:clipboard:paste_escaped 
