@@ -1,5 +1,6 @@
 imap <C-e> <End>
 imap <C-h> <Home>
+set backspace=indent,eol,start
 "nmap j <up>
 "nmap k <down>
 set pastetoggle=<C-E>
@@ -40,7 +41,13 @@ if has('vim_starting')
  call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 " originalrepos on git hub
-"NeoBundle 'Lokaltog/vim-powerline'
+" Status Line plugin
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
+" Regex
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'osyo-manga/vim-over'
 " javascript jade
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'briancollins/vim-jst'
@@ -59,7 +66,7 @@ NeoBundle 'tpope/vim-rails'
 ""
 NeoBundle 'lambdalisue/platex.vim'
 NeoBundle 'taichouchou2/alpaca_powertabline'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+""NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'dag/vim2hs'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
@@ -268,6 +275,65 @@ nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35
 ""
 "python from powerline.bindings.vim import source_plugin; source_plugin()
 "source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
+"
+
+""
+" lightline setting
+""
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'MyFugitive',
+      \   'readonly': 'MyReadonly',
+      \   'modified': 'MyModified',
+      \   'filename': 'MyFilename'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+function! MyModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! MyReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "❖"
+  else
+    return ""
+  endif
+endfunction
+
+function! MyFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? '➲ '._ : ''
+  endif
+  return ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+" 
+" Start up setting
 command Vf :VimFiler -split -simple -winwidth=35 -no-quit 
 
 
