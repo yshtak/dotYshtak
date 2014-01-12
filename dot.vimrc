@@ -24,6 +24,7 @@ autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-di
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
+autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
 "au BufNewFile,BufRead *.rb set nowrap tabstop=1 shiftwidth=1 softtabstop=1
 
@@ -41,13 +42,14 @@ if has('vim_starting')
  call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 " originalrepos on git hub
+" HTML5 syntax
+NeoBundle 'othree/html5.vim'
 " Status Line plugin
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 " Regex
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'osyo-manga/vim-over'
 " javascript jade
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'briancollins/vim-jst'
