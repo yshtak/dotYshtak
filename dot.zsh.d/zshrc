@@ -1,5 +1,7 @@
 # -*- sh -*-
-
+#
+fpath=(~/.zsh.d/site-functions $fpath)
+fpath=(~/.zsh.d/zsh-completions/src $fpath)
 # キーバインド
 ## Emacsキーバインドを使う。
 bindkey -e
