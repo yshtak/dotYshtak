@@ -1,9 +1,9 @@
 imap <C-e> <End>
 imap <C-h> <Home>
 set backspace=indent,eol,start
-
 set pastetoggle=<C-E> " ペーストモードの切り替え
 set cursorline " Cursol lineの表示
+set cursorcolumn
 set number " 行番号表示
 set showmatch
 set smarttab
@@ -15,13 +15,12 @@ set expandtab " replace to use a tab as space
 set laststatus=2 " StatuLineの表示
 "set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
-set t_Co=256
 set encoding=utf-8
 set hlsearch
 set incsearch
 """"""""""""""""""""""""""""""""""""""
 set foldenable " 折りたたみON
-
+"""""""""""""""""""""""""""""""""""""
 ""------------------------
 "" autocmd list
 ""------------------------
@@ -50,8 +49,14 @@ endif
 " Debug plugin
 NeoBundle 'scrooloose/syntastic'
 " originalrepos on git hub
+" vim-scripts
+NeoBundle 'vim-scripts/CSApprox'
 " Color Scheme
 NeoBundle 'tomasr/molokai'
+NeoBundle 'ciaranm/inkpot'
+NeoBundle 'jonathanfilip/vim-lucius'
+"NeoBundle 'nanotech/jellybeans'
+
 " for Erlang
 NeoBundle 'jimenezrick/vimerl'
 " HTML5 syntax
@@ -424,9 +429,14 @@ endfunction
 command Vf :VimFiler -split -simple -winwidth=35 -no-quit 
 
 let g:vimfiler_safe_mode_by_default = 0
-syntax on
+"""""
 
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
-"set background=dark
+syntax on
+set t_Co=256
+"let g:inkpot_black_background=0 
+set background=dark
+colorscheme yshtak
+"colorscheme molokai
+"colorscheme lucius 
+"let g:molokai_original = 1
+"let g:rehash256 = 1

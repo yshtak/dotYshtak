@@ -12,8 +12,8 @@ endif
 let colors_name = "yshtak"
 
 " background
-hi Normal         gui=NONE   guifg=#cfbfad   guibg=#222222
-hi CursorLine     gui=underline    guibg=#2e2e37
+hi Normal         gui=NONE   guifg=#dddddd   guibg=#333333
+hi CursorLine     gui=underline    guibg=#444444
 
 hi IncSearch      gui=BOLD   guifg=#303030   guibg=#cd8b60
 hi Search         gui=NONE   guifg=#303030   guibg=#ad7b57
@@ -41,12 +41,9 @@ hi DiffChange     gui=NONE   guifg=#ffffcd   guibg=#306b8f
 hi DiffDelete     gui=NONE   guifg=#ffffcd   guibg=#6d3030
 hi DiffAdd        gui=NONE   guifg=#ffffcd   guibg=#306d30
 
-hi Cursor         cterm=reverse  
-hi lCursor        cterm=reverse 
-hi CursorIM       cterm=reverse 
-"hi Cursor         cterm=reverse gui=NONE   guifg=#303020   guibg=#3b3b6f 
-"hi lCursor        cterm=reverse gui=NONE   guifg=#404040   guibg=#8fff8b
-"hi CursorIM       cterm=reverse gui=NONE   guifg=#404040   guibg=#8b8bff
+hi Cursor         gui=NONE   guifg=#303020   guibg=#3b3b6f 
+hi lCursor        gui=NONE   guifg=#404040   guibg=#8fff8b
+hi CursorIM       gui=NONE   guifg=#404040   guibg=#8b8bff
 
 hi Folded         gui=NONE   guifg=#cfcfcd   guibg=#4b208f
 hi FoldColumn     gui=NONE   guifg=#8b8bcd   guibg=#2e2e2e
@@ -54,23 +51,27 @@ hi FoldColumn     gui=NONE   guifg=#8b8bcd   guibg=#2e2e2e
 hi Directory      gui=NONE   guifg=#00ff8b   guibg=NONE
 hi LineNr         gui=NONE   guifg=#8b8bcd   guibg=#2e2e2e
 hi NonText        gui=BOLD   guifg=#8b8bcd   guibg=NONE
-hi SpecialKey     gui=BOLD   guifg=#3b205d   guibg=NONE
+hi SpecialKey     gui=BOLD   guifg=#ab508d   guibg=NONE
 hi Title          gui=BOLD   guifg=#af4f4b   guibg=NONE
 hi Visual         gui=NONE   guifg=#eeeeee   guibg=#4e4e8f
 
-hi Comment        gui=NONE   guifg=#cd8b00   guibg=NONE
-hi Constant       gui=NONE   guifg=#ffcd8b   guibg=NONE
-hi String         gui=NONE   guifg=#ffcd8b   guibg=#404040
+hi Comment        gui=NONE   guifg=#6d8bb0   guibg=NONE
+"hi Constant       gui=NONE   guifg=#ffcd8b   guibg=NONE
+hi Constant       gui=NONE   guifg=#ff6d6b   guibg=NONE
+hi String         gui=NONE   guifg=#cfad7b   guibg=#404040
 hi Error          gui=NONE   guifg=#ffffff   guibg=#6e2e2e
-hi Identifier     gui=NONE   guifg=#ff8bff   guibg=NONE
+hi Function     gui=NONE   guifg=#ff8bff   guibg=NONE
+hi Identifier     gui=NONE   guifg=#6fbbff   guibg=NONE
+"hi Identifier     gui=NONE   guifg=#ff8bff   guibg=NONE
 hi Ignore         gui=NONE
-hi Number         gui=NONE   guifg=#f0ad6d   guibg=NONE
-hi PreProc        gui=NONE   guifg=#409090   guibg=NONE
+hi Number         gui=NONE   guifg=#20adfd   guibg=NONE
+hi PreProc        gui=BOLD   guifg=#60c0c0   guibg=NONE
 hi Special        gui=NONE   guifg=#c080d0   guibg=NONE
 hi SpecialChar    gui=NONE   guifg=#c080d0   guibg=#404040
-hi Statement      gui=NONE   guifg=#808bed   guibg=NONE
+hi Statement      gui=BOLD   guifg=#808bed   guibg=NONE
 hi Todo           gui=BOLD   guifg=#303030   guibg=#d0a060
-hi Type           gui=NONE   guifg=#ff8bff   guibg=NONE
+hi Type           gui=NONE   guifg=#efcb4f   guibg=NONE
+"hi Type           gui=NONE   guifg=#ff8bff   guibg=NONE
 hi Underlined     gui=BOLD   guifg=#df9f2d   guibg=NONE
 hi TaglistTagName gui=BOLD   guifg=#808bed   guibg=NONE
 
@@ -106,7 +107,7 @@ endif
 if v:version >= 703
   hi Conceal      gui=NONE      guifg=#c080d0   guibg=NONE
   "hi ColorColumn  gui=NONE                      guibg=#2e2e2e
-  hi CursorColumn gui=NONE     guibg=#2e2e37
+  hi CursorColumn gui=NONE     guibg=#444444
 endif
 
 " vim: set et :
