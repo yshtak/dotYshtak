@@ -153,7 +153,8 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ 'scheme' : $HOME.'/.gosh_completions',
+    \ 'erlang' : $HOME.'/.vim/dict/erlang.dict'
         \ }
 
 " Define keyword.
@@ -269,7 +270,25 @@ nnoremap <silent>UB :<C-u>Unite buffer<CR>
 "------------------------------------
 " {{{
 nnoremap <silent> [unite]<C-R>      :<C-u>Unite -no-quit reek<CR>
-nnoremap <silent> [unite]<C-R><C-R> :<C-u>Unite -no-quit rails_best_practices<CR>
+" insertモードで開始
+let g:unite_enable_start_insert=1
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case=1
+let g:unite_enable_smart_case=1
+" grep 検索
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ,cg :<C-u> Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> ,r :<C-u>UniteResume search-buffer<CR>
+" unite grepにag(The silver searcher)を利用
+if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt=''
+endif
+"unite grep
+"nnoremap <silent> [unite]<C-R><C-R> :<C-u>Unite -no-quit rails_best_practices<CR>
 " }}}
 "}}}
 
@@ -349,7 +368,7 @@ aug END
 " vimerl
 "---------------------------------
 "let g:erlangHightlightBif=1
-let g:erlang_folding=1
+"let g:erlang_folding=1
 ""----------------------------------
 " Syntactic
 ""----------------------------------
